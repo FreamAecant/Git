@@ -14,27 +14,45 @@
             margin: 30px 100px;        
         }    
         .menu{
-            background-color: rgba(255,255,255,1);
+            background-color: black;
+            background-image: url(img/lucem-aspicio-fade.png);
+            background-repeat: no-repeat;
+            background-position: right;
             height: 480px;
             border-radius: 10px;
-            margin-left: 30px;
+            margin-left: 10px;
             margin-top: 15px;
-            padding: 10px;
+            padding: 5px;
         }
         .contenido{
-            padding: 10px;
+            padding: 10px;            
         }    
         .prim-ing-header{
             background-color: rgb(255, 240, 0);
             padding: 5px;
-            border: 5px solid black;
+            border: 5px solid aqua;
             border-radius: 10px;
             margin-bottom: 5px;
+            
         }
         .btn-lg{
             font-size: medium;
             font-weight: bold;
-            height: auto;
+            line-height: normal;
+            
+        }
+        .tarjeta{
+            background-color: rgba(0, 15, 200, 0.3);
+            margin: 5px;
+            
+            height: 50px;
+        }
+        .col-md-4{
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+        .fit-img{
+            max-width: 100%;
         }
     </style>
 </head>
@@ -44,6 +62,7 @@
     <div class="main">
         <div class="container-fluid">
             <div class="row">
+
                 <div class="col-md-3">
                     <div class="menu">
                         <div class="prim-ing-header">
@@ -53,16 +72,56 @@
                             </h5>
                         </div>
                         <div>
-                            <input type="button" class="btn btn-lg btn-primary btn-block" value="Ingresar como estudiante">
-                            <input type="button" class="btn btn-lg btn-primary btn-block" value="Ingresar como docente">
+                            <input type="button" class="btn btn-lg btn-primary btn-block" style="height: 100%; white-space:normal" value="Ingresar como estudiante">
+                            <input type="button" class="btn btn-lg btn-primary btn-block" style="height: 100%; white-space:normal" value="Ingresar como docente">
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-9">
                     <div class="contenido">
-                        <img src="img/dipp-banner.jpg" style="overflow: hidden;">
+                        <img class="fit-img" src="img/dipp-banner.jpg">
+                        <h5><b>Reciente</b></h5>
+                        <div class="row">
+                            
+                            <div class="col-md-4">
+                                <div class="tarjeta">
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="tarjeta">
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="tarjeta">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <h5><b>Importante</b></h5>
+                        <div class="row">
+                           
+                            <div class="col-md-4">
+                                <div class="tarjeta">
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="tarjeta">
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="tarjeta">
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
