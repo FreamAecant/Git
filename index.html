@@ -11,14 +11,13 @@
         .main{
             background-color: rgba(3, 3, 24, 0.329);
             
-            margin: 30px 100px;        
+            margin: 30px 5%;        
         }    
         .menu{
             background-color: black;
             background-image: url(img/lucem-aspicio-fade.png);
             background-repeat: no-repeat;
-            background-position: right;
-            height: 480px;
+            background-position: right;           
             border-radius: 10px;
             margin-left: 10px;
             margin-top: 15px;
@@ -36,9 +35,7 @@
             
         }
         .btn-lg{
-            font-size: medium;
-            font-weight: bold;
-            line-height: normal;
+            
             
         }
         .tarjeta{
@@ -63,6 +60,20 @@
         .fit-img{
             max-width: 100%;
         }
+        .menu-element{
+            /*font-size: medium;
+            font-weight: bold;
+            line-height: normal;*/
+            padding: 5px;       
+            background-color: #007BFF;
+            color: white;
+            font-size: medium;
+            font-weight: bold;
+            line-height: normal;
+            height: 100%; 
+            white-space: normal;
+            border-radius: 0.3rem;
+        }
         h5{
             color: black;
             text-decoration-line: underline;            
@@ -85,8 +96,13 @@
                             </h5>
                         </div>
                         <div>
-                            <input type="button" class="btn btn-lg btn-primary btn-block" style="height: 100%; white-space:normal" value="Ingresar como estudiante">
-                            <input type="button" class="btn btn-lg btn-primary btn-block" style="height: 100%; white-space:normal" value="Ingresar como docente">
+                            <input type="button" class="btn btn-lg btn-primary btn-block menu-element" style="height: 100%; white-space:normal" value="Ingresar como estudiante">
+                            <input type="button" class="btn btn-lg btn-primary btn-block menu-element" style="height: 100%; white-space:normal" value="Ingresar como docente">
+                            <input type="button" class="btn btn-lg btn-primary btn-block menu-element" style="height: 100%; white-space:normal" value="Ingresar como personal administrativo">                            
+                            <div class="tarjeta menu-element">
+                                Calendario académico
+                                <a href="doc/CALENDARIO-ACADEMICO-2018.pdf"><img class="fit-img" src="img/calendario-academico.png"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
