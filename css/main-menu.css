@@ -8,19 +8,22 @@
     background-repeat: no-repeat;
     background-position: right;           
     border-radius: 10px;
-    margin-top: 15px;
+    margin-top: 0%;
     padding: 5%;
 }
 .col-md-3{
     padding: 1%;
     padding-right: 0.4%;
+    padding-top: 0%;
 }
 .col-md-9{
     padding: 1%;
     padding-left: 0.4%;
+    padding-top: 0%;
 }
 .contenido{
-    padding: 10px;            
+    padding: 10px; 
+    padding-top: 0%;           
 }    
 .prim-ing-header{
     background-color: rgb(255, 240, 0);
@@ -104,3 +107,17 @@
     width: max-content;*/
 }
 /*Fin Estilos para la topbar*/
+.menu-link{
+    display: block;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    margin-bottom: 3%;
+}
+.menu-link:hover{
+    color: rgb(254, 235, 9);
+    font-size: 110%;
+}
+.h1{
+    padding-left: 1%;
+    text-decoration: wavy;
+}
