@@ -6,18 +6,41 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
-    <!--link rel="stylesheet" type="text/css" media="screen" href="css/signin.css" /-->
     <link rel="stylesheet" type="text/css" media="screen" href="css/login.css" />
     <!--script src="main.js"></script-->
 </head>
 
-<body style="background-image: url(img/lucem-aspicio-tile.jpg)">    
-    <div class="container">
-        
-        <form class="form-signin"> 
-            <div class="asd">       
-                <img class="logo" src="img/emblema.png" alt="Emblema"> 
+<body style="background-image: url(img/lucem-aspicio-tile.jpg)">  
+    <!--La topbar-->  
+    <div class="container-fluid topbar-container">
+        <div class="row topbar">
+            <div class="col-3">
+                <div class="top-tarjeta">
+                    <b>•Inicio</b>
+                </div>
+            </div>   
+            <div class="col-3">
+                <div class="top-tarjeta">
+                    •Estudiantes
+                </div>
             </div>
+            <div class="col-3">
+                <div class="top-tarjeta">
+                    •Docentes
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="top-tarjeta">
+                    •Administrativo
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!--/La topbar-->
+    <div class="container">
+        <form class="form-signin">                    
+            <img class="logo" src="img/emblema.png" alt="Emblema">             
             <h1 class="h3 mb-3 font-weight-normal">Plataforma para estudiantes</h1>
             <label for="inputCuenta" class="sr-only">Cuenta</label>
             <input type="text" id="inputCuenta" class="form-control" placeholder="Número de cuenta">

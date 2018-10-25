@@ -8,9 +8,31 @@
     align-items: center;
 }
 .asd{
-
+    
 }
-
+/*Estilos para la topbar*/  
+.topbar{
+    height: 30px;
+    width: 50%;
+    /*background-color: black;*/
+}
+.topbar-container{
+    /*max-width: min-content;*/
+    background-color: black; 
+}
+.top-tarjeta{
+    margin-top: 2px;
+    padding-left: 3px;
+    color: white;
+    border-bottom: 3px solid rgb(56, 56, 56);
+    border-left: 3px solid rgb(56, 56, 56);
+    border-radius: 8px;
+    
+    font-size: small;
+    /*height: 100%;
+    width: max-content;*/
+}
+/*Fin Estilos para la topbar*/
 
 html,
 body {
