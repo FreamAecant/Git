@@ -1,6 +1,7 @@
 .main{
     background-color: rgba(3, 3, 24, 0.329);
-    margin: 15px 5%;        
+    margin: 15px 5%;       
+    padding-bottom: 100px; 
 }    
 .menu{
     background-color: black;
@@ -36,7 +37,15 @@
 .tarjeta{
     background-color: rgba(0, 15, 200, 0.3);
     margin: 5px;
-    
+    min-height: 100%;
+    height: max-content;
+    padding: 5%;
+    border-radius: 20px;
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+    border-top: 5px solid black;
+
+    color: #D4D6EE;
 }
 .col-md-4{
     padding-right: 5px;
@@ -84,6 +93,31 @@
     border-bottom-right-radius: 10px;
 }
 
+
+.menu-link{
+    display: block;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    margin-bottom: 3%;
+}
+.menu-link:hover{
+    color: rgb(254, 235, 9);
+    font-size: 110%;
+}
+.h1{
+    padding-left: 1%;
+    text-decoration: wavy;
+}
+.tray-row{
+    margin-bottom: 30px;
+}
+
+/*Anti-bootstrap*/
+a, a:hover{
+    color: unset;
+}
+/*Fin Anto-bootstrap*/
+
 /*Estilos para la topbar*/  
 .topbar{
     height: 30px;
@@ -107,17 +141,3 @@
     width: max-content;*/
 }
 /*Fin Estilos para la topbar*/
-.menu-link{
-    display: block;
-    color: rgb(255, 255, 255);
-    text-decoration: underline;
-    margin-bottom: 3%;
-}
-.menu-link:hover{
-    color: rgb(254, 235, 9);
-    font-size: 110%;
-}
-.h1{
-    padding-left: 1%;
-    text-decoration: wavy;
-}
