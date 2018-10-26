@@ -36,6 +36,7 @@
 }
 .tarjeta{
     background-color: rgba(0, 15, 200, 0.3);
+    
     margin: 5px;
     min-height: 100%;
     height: max-content;
@@ -106,7 +107,6 @@
 }
 .h1{
     padding-left: 1%;
-    text-decoration: wavy;
 }
 .tray-row{
     margin-bottom: 30px;
