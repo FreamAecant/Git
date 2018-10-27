@@ -1,7 +1,7 @@
 var dets=[
     {
         innerSmall:"<h5>Matemática</h5>",
-        innerBig:`<b pointer: none>MM-110 Pre-cálculo<br>
+        innerBig:`<b style="pointer-events: none">MM-110 Pre-cálculo<br>
             MM-111 Geometría y Trigonometría<br>
             MM-314 Programación I<br>
             MM-201 Cálculo I<br>
