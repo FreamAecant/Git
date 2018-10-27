@@ -1,0 +1,47 @@
+.background-for-clipping{
+    background-color: rgba(15, 15, 200, 0.8);
+    margin: 2%;
+    border-radius: 10px;
+    height: 500px;
+}
+.nivel{
+    align-content: center;
+}
+.tarjeta{
+    height: 50px;
+    width: 70%;
+    background-color: #ffffff;
+    /*overflow-y: scroll; */
+    margin-top: 7px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 30%;
+}
+
+.main-container{
+    width:300px;
+}
+
+
+/* centered columns styles */
+/*.row{
+    margin-right: unset;
+    margin-left: unset;
+}*/
+.row-centered {
+    text-align:center;
+    padding: 3px;
+    width: max-content;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    text-align: center;
+    background-color: #ccc;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+}
