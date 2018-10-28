@@ -46,6 +46,7 @@ function goBig(id){
     document.getElementById(id).setAttribute("onmouseout","goBack(this.id)");
     document.getElementById(id).removeAttribute("onclick","undefined");
     document.getElementById(id).setAttribute("class","tarjeta-expand");
+    document.getElementById(id).scrollTop = 90;
     return;
 }
 function goBack(id){
