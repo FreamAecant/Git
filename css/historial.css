@@ -1,0 +1,43 @@
+.main{
+    background-color: rgba(3, 3, 24, 0.329);
+    margin: 15px 5%;
+    padding: 2%
+}
+/*Estilos para la topbar*/  
+.topbar{
+    height: 30px;
+    width: 50%;    
+}
+.topbar-container{    
+    background-color: black; 
+}
+.top-tarjeta{
+    margin-top: 2px;
+    padding-left: 3px;
+    color: white;
+    border-bottom: 3px solid rgb(56, 56, 56);
+    border-left: 3px solid rgb(56, 56, 56);
+    border-radius: 8px;    
+    font-size: small;
+}
+/*Fin Estilos para la topbar*/
+
+.lista03{
+    font-weight: normal;
+    width: 100%;
+    height: min-content;
+    overflow-y: scroll;
+    background-color: white;
+    padding-left: 20px;
+}
+.h303{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.ficha{
+    font-weight: bold;
+    background-color: rgba(0, 15, 200, 0.3); 
+    border-radius: 20px;    
+    margin: 5px;
+    padding: 17px;
+}
