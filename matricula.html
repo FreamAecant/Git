@@ -12,12 +12,35 @@
 </head>
 
 <body style="background-image: url(img/lucem-aspicio-tile.jpg); background-size: auto">
+        <!--La topbar-->  
+        <div class="container-fluid topbar-container">
+            <div class="row topbar">
+                <div class="col-3">
+                    <div class="top-tarjeta">
+                        <b>•Cerrar sesión</b>
+                    </div>
+                </div>   
+                <div class="col-3">
+                    <div class="top-tarjeta">
+                        •Cuenta
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="top-tarjeta">
+                        •Matrícula
+                    </div>
+                </div>            
+            </div>
+        </div>
+            <!--/La topbar-->
+            
     <div class="main">
         <div class="container-fluid">
             <h1><b>Matrícula de asignaturas</b></h1>
             <p><b>Primer periodo del 2019<br>
             Seleccione un departamento para ver las asignaturas disponibles<br>
             Seleccione una asignatura para ver las secciones disponibles</b></p>
+
             <div class="row">
                 <div class="col-4">
                     <div class="tarjeta" id="0" onclick="goBig(this.id)">
@@ -33,6 +56,51 @@
                     <div class="tarjeta" id="2" onclick="goBig(this.id)">
                         <h5>Física</h5>
                     </div>
+                </div>
+                <div class="col-4">
+                    <div class="tarjeta" id="3" onclick="goBig(this.id)">
+                        <h5>Humaninades</h5>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="tarjeta" id="4" onclick="goBig(this.id)">
+                        <h5>Electivas</h5>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="tarjeta" id="5" onclick="goBig(this.id)">
+                        <h5>Astronomia</h5>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="tarjeta" id="6" onclick="goBig(this.id)">
+                        <h5>Ciencias Naturales</h5>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="tarjeta" id="7" onclick="goBig(this.id)">
+                        <h5>Idiomas</h5>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            <div class="prematricula">
+                Asignaturas prematriculadas
+                <div class="lista03">
+                    PLACEHOLDER - Sección - Hora - Aula - Uv - Código<br><hr>
+                    PLACEHOLDER - Sección - Hora - Aula - Uv - Código<br><hr>
+                    PLACEHOLDER - Sección - Hora - Aula - Uv - Código<br><hr>
+                    PLACEHOLDER - Sección - Hora - Aula - Uv - Código
+                </div>
+                En lista de espera
+                <div class="lista03">
+                    PLACEHOLDER - Sección - Hora - Aula - Uv - Código
+                </div>                    
+                Laboratorios prematriculados
+                <div class="lista03">
+                    PLACEHOLDER - Sección - Hora - Aula - Uv - Código<br><hr>
+                    PLACEHOLDER - Sección - Hora - Aula - Uv - Código
                 </div>
             </div>
         </div>

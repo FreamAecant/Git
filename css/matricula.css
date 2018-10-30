@@ -2,8 +2,30 @@
     background-color: rgba(3, 3, 24, 0.329);
     margin: 15px 5%;       
     padding-bottom: 100px; 
-    min-height: 1200px;
 }
+/*Estilos para la topbar*/  
+.topbar{
+    height: 30px;
+    width: 50%;
+    /*background-color: black;*/
+}
+.topbar-container{
+    /*max-width: min-content;*/
+    background-color: black; 
+}
+.top-tarjeta{
+    margin-top: 2px;
+    padding-left: 3px;
+    color: white;
+    border-bottom: 3px solid rgb(56, 56, 56);
+    border-left: 3px solid rgb(56, 56, 56);
+    border-radius: 8px;
+    
+    font-size: small;
+    /*height: 100%;
+    width: max-content;*/
+}
+/*Fin Estilos para la topbar*/
 .tarjeta{
     background-color: rgba(0, 15, 200, 0.3);    
     color: #D4D6EE;
@@ -30,5 +52,28 @@
     overflow-x: hidden;
     height: 200px;
     padding-bottom: 100px;
-    padding-top: 100px;
+    padding-top: 100px;    
+}
+.prematricula{
+    font-weight: bold;
+    background-color: rgba(0, 15, 200, 0.3); 
+    border-radius: 20px;    
+    margin: 5px;
+    padding: 17px;
+}
+
+.col-4{
+    max-height: 89px;    
+}
+.lista03{
+    font-weight: normal;
+    width: 100%;
+    height: min-content;
+    overflow-y: scroll;
+    background-color: white;
+    padding-left: 20px;
+}
+hr{
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
