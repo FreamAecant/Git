@@ -41,3 +41,14 @@
     margin: 5px;
     padding: 17px;
 }
+.titulo-independiente{
+    padding-left: 32px;
+}
+a{
+    text-decoration: underline;
+    color: black;
+}
+a:hover{
+    font-size: larger;
+    color: #FEEB09;    
+}
