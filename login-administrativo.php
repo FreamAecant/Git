@@ -13,31 +13,9 @@
 
 <body style="background-image: url(img/lucem-aspicio-tile.jpg)">  
     <!--La topbar-->  
-    <div class="container-fluid topbar-container">
-        <div class="row topbar">
-            <div class="col-3">
-                <div class="top-tarjeta">
-                    <b>•Inicio</b>
-                </div>
-            </div>   
-            <div class="col-3">
-                <div class="top-tarjeta">
-                    •Estudiantes
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="top-tarjeta">
-                    •Docentes
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="top-tarjeta">
-                    •Administrativo
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
+    <?php
+    include "topbar-general.html"
+    ?>
     <!--/La topbar-->
     <div class="container">
         <form class="form-signin">                    

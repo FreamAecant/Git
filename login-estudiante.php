@@ -3,48 +3,26 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Plataforma para Docentes</title>
+    <title>Plataforma para Estudiantes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/login.css" />
-    <!--script src="main.js"></script>*-->
+    <!--script src="main.js"></script-->
     <link rel="icon" href="img/icon.jpg">
 </head>
 
 <body style="background-image: url(img/lucem-aspicio-tile.jpg)">  
     <!--La topbar-->  
-    <div class="container-fluid topbar-container">
-        <div class="row topbar">
-            <div class="col-3">
-                <div class="top-tarjeta">
-                    <b>•Inicio</b>
-                </div>
-            </div>   
-            <div class="col-3">
-                <div class="top-tarjeta">
-                    •Estudiantes
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="top-tarjeta">
-                    •Docentes
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="top-tarjeta">
-                    •Administrativo
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
+    <?php
+    include "topbar-general.html"
+    ?>
     <!--/La topbar-->
     <div class="container">
         <form class="form-signin">                    
             <img class="logo" src="img/emblema.png" alt="Emblema">             
-            <h1 class="h3 mb-3 font-weight-normal">Plataforma para instructores y profesores</h1>
+            <h1 class="h3 mb-3 font-weight-normal">Plataforma para estudiantes</h1>
             <label for="inputCuenta" class="sr-only">Cuenta</label>
-            <input type="text" id="inputCuenta" class="form-control" placeholder="Código de empleado">
+            <input type="text" id="inputCuenta" class="form-control" placeholder="Número de cuenta">
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
             <!--
@@ -54,8 +32,13 @@
                 </label>
             </div>
             -->
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+            <button class="btn btn-lg btn-primary btn-block" type="button" id="signinButton">Ingresar</button>
         </form>
     </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/signin-estudiante.js"></script>
+
 </body>
 </html>

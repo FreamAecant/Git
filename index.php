@@ -16,40 +16,9 @@
 
 
 <body style="background-image: url(img/lucem-aspicio-tile.jpg); background-size: auto">
-    <!--La topbar-->  
-    <div class="container-fluid topbar-container">
-        <div class="row topbar">
-            <div class="col-3">
-                <a href="index.html">
-                    <div class="top-tarjeta">
-                        <b>•Inicio</b>
-                    </div>
-                </a>
-            </div>   
-            <div class="col-3">
-                <a href="login-estudiante.html">
-                    <div class="top-tarjeta">
-                        •Estudiantes
-                    </div>
-                </a>
-            </div>
-            <div class="col-3">
-                <a href="login-docente.html">
-                    <div class="top-tarjeta">
-                        •Docentes
-                    </div>
-                </a>
-            </div>
-            <div class="col-3">
-                <a href="login-administrativo.html">
-                    <div class="top-tarjeta">
-                        •Administrativo
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    <!--/La topbar-->
+<?php
+include "topbar-general.html"
+?>
     <div class="main">
         <div class="container-fluid">
             <div class="row">
@@ -66,9 +35,9 @@
                             <!--<input type="button" class="btn btn-lg btn-primary btn-block menu-element" style="height: 100%; white-space:normal" value="Ingresar como estudiante">
                             <input type="button" class="btn btn-lg btn-primary btn-block menu-element" style="height: 100%; white-space:normal" value="Ingresar como docente">
                             <input type="button" class="btn btn-lg btn-primary btn-block menu-element" style="height: 100%; white-space:normal" value="Ingresar como personal administrativo">-->
-                            <a href="login-estudiante.html" class="btn btn-lg btn-primary btn-block menu-element" style="height: 100%; white-space:normal" >Ingresar como estudiante</a>
-                            <a href="login-docente.html" class="btn btn-lg btn-primary btn-block menu-element" style="height: 100%; white-space:normal" >Ingresar como docente</a>
-                            <a href="login-administrativo.html" class="btn btn-lg btn-primary btn-block menu-element" style="height: 100%; white-space:normal" >Ingresar como personal administrativo</a>
+                            <a href="login-estudiante.php" class="btn btn-lg btn-primary btn-block menu-element" style="height: 100%; white-space:normal" >Ingresar como estudiante</a>
+                            <a href="login-docente.php" class="btn btn-lg btn-primary btn-block menu-element" style="height: 100%; white-space:normal" >Ingresar como docente</a>
+                            <a href="login-administrativo.php" class="btn btn-lg btn-primary btn-block menu-element" style="height: 100%; white-space:normal" >Ingresar como personal administrativo</a>
                             <div class="tarjeta menu-element">
                                 Calendario académico
                                 <a href="doc/CALENDARIO-ACADEMICO-2018.pdf"><img class="fit-img" src="img/calendario-academico.png"></a>
