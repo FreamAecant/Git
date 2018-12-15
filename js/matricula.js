@@ -33,7 +33,10 @@ var dets=[
         innerBig:`<b style="pointer-events: none">
             FS-100 Física I<br>
             FS-200 Física II<br>
-            Fs-300 Física III<br>
+            FS-300 Física III<br>
+            FS-414 Física Médica<br>
+            FS-302 Electrostática<br>
+            FS-304 Termodinámica
             </b>        
             `,
         innerDetail:`
@@ -108,9 +111,10 @@ var dets=[
     }
 ]
 
+var $registroAsignaturas = null;
 
 
-function goBig(id){
+/*function goBig(id){
     document.getElementById(id).innerHTML=dets[id].innerBig;
     document.getElementById(id).setAttribute("onmouseout","goBack(this.id)");
     document.getElementById(id).removeAttribute("onclick")
@@ -124,7 +128,7 @@ function goBack(id){
     document.getElementById(id).innerHTML=dets[id].innerSmall;
     document.getElementById(id).setAttribute("class","tarjeta");
     return;
-}
+}*/
 
 $(".nombreAsignatura").click(function(){
     console.log(this.id);
@@ -132,24 +136,54 @@ $(".nombreAsignatura").click(function(){
     $("#"+this.id).removeClass("nombreAsignaturaGray");
 });
 
-/*function goBig(id){
+function loadAsignaturas(){
     $.ajax({
-        url: "php/getSecciones.php",
-        data: "id="+id,
-        dataType: "json",
-        method: "POST",
+        url:"php/fetchAsignaturas.php",
+        dataType:"json",
         success: function(respuesta){
-            $("#matriculaCont").html(`
+            console.log(respuesta);
+            $registroAsignaturas = respuesta;
+            console.log($registroAsignaturas);
+            displayDepartamentos($registroAsignaturas);
+        },
+        error: function(err){
+            console.error(err);            
+        }        
+    })
+}
+function displayDepartamentos($registroAsignaturas){
+    $("#matriculaCont").html(``)
+    for(var i=0;i < $registroAsignaturas.length;i++){
+        $("#matriculaCont").append(`
+        <div class="col-4">
+            <div class="tarjeta" id="${$registroAsignaturas[i].idDepartamento}" onclick="goBig(this.id)">
+                <h5>${$registroAsignaturas[i].nombreDepartamento}</h5>
+            </div>
+        </div>
+        `)
+    }
+    $("#matriculaCont").append(``)
+}
 
-            `)
-            for(var i=0; i<respuesta.length;i++){
-                $("#matriculaCont").append(`
-                
-                `)
-            }
+function goBig(id){
+    registro = [];
+    for(var i=0; i<$registroAsignaturas.length; i++){
+        if ($registroAsignaturas[i].idDepartamento == id){
+            registro = $registroAsignaturas[i].asignaturas;
+        }
+    }
+    console.log(registro);
+    /*$("#matriculaCont").html(`
+
+    `)
+    for(var i=0; i<respuesta.length;i++){
         $("#matriculaCont").append(`
         
         `)
-        }
-    })
-}*/
+    }
+    $("#matriculaCont").append(`
+    
+    `)*/
+}
+
+$(document).ready(loadAsignaturas);

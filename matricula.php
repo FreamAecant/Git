@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION["nombreEstudiante"])){
+    header("Location: login-estudiante.php", true, 301);
+    die();    
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +33,7 @@
             Seleccione una asignatura para ver las secciones disponibles</b></p>
 
             <div class="row" id="matriculaCont">
-                <div class="col-4">
+                <!--<div class="col-4">
                     <div class="tarjeta" id="matematica" onclick="goBig(this.id)">
                         <h5>Matemática</h5>
                     </div>
@@ -65,7 +72,7 @@
                     <div class="tarjeta" id="idiomas" onclick="goBig(this.id)">
                         <h5>Idiomas</h5>
                     </div>
-                </div>
+                </div>-->
             </div>
 
             <hr>
