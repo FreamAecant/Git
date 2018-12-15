@@ -77,3 +77,9 @@
     margin-top: 2px;
     margin-bottom: 2px;
 }
+.nombreAsignatura{
+    cursor: pointer;
+}
+.nombreAsignaturaGray{
+    color: #9fa0a3;
+}

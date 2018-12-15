@@ -125,3 +125,31 @@ function goBack(id){
     document.getElementById(id).setAttribute("class","tarjeta");
     return;
 }
+
+$(".nombreAsignatura").click(function(){
+    console.log(this.id);
+    $(".nombreAsignatura").addClass("nombreAsignaturaGray");
+    $("#"+this.id).removeClass("nombreAsignaturaGray");
+});
+
+/*function goBig(id){
+    $.ajax({
+        url: "php/getSecciones.php",
+        data: "id="+id,
+        dataType: "json",
+        method: "POST",
+        success: function(respuesta){
+            $("#matriculaCont").html(`
+
+            `)
+            for(var i=0; i<respuesta.length;i++){
+                $("#matriculaCont").append(`
+                
+                `)
+            }
+        $("#matriculaCont").append(`
+        
+        `)
+        }
+    })
+}*/

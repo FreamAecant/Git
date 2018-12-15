@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/matricula.css" />
     
+    
     <link rel="icon" href="img/icon.jpg">
 </head>
 
@@ -26,44 +27,23 @@
             Seleccione una asignatura para ver las secciones disponibles</b></p>
 
             <div class="row" id="matriculaCont">
-                <div class="col-4">
-                    <div class="tarjeta" id="matematica" onclick="goBig(this.id)">
-                        <h5>Matemática</h5>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="tarjeta" id="ingSistemas" onclick="goBig(this.id)">
-                        <h5>Ingeniaria en sistemas</h5>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="tarjeta" id="fisica" onclick="goBig(this.id)">
-                        <h5>Física</h5>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="tarjeta" id="humanidades" onclick="goBig(this.id)">
-                        <h5>Humaninades</h5>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="tarjeta" id="electivas" onclick="goBig(this.id)">
-                        <h5>Electivas</h5>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="tarjeta" id="astronomia" onclick="goBig(this.id)">
-                        <h5>Astronomia</h5>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="tarjeta" id="cienNaturales" onclick="goBig(this.id)">
-                        <h5>Ciencias Naturales</h5>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="tarjeta" id="idiomas" onclick="goBig(this.id)">
-                        <h5>Idiomas</h5>
+                <div class="col-12">
+                    ← seleccionar otro departamento<br>
+                    <div class="tarjeta row">
+                        <div class="col-6">
+                            <b>
+                            <span id="mm110" class="nombreAsignatura">MM-110 Pre-cálculo</span><br>
+                            <span id="mm111" class="nombreAsignatura">MM-111 Geometría y Trigonometría</span><br>
+                            <span id="mm314" class="nombreAsignatura">MM-314 Programación I</span><br>
+                            <span id="mm201" class="nombreAsignatura">MM-201 Cálculo I</span><br>
+                            <span id="mm202" class="nombreAsignatura">MM-202 Cálculo II</span><br>
+                            <span id="mm211" class="nombreAsignatura">MM-211 Vectores y Matrices</span><br>
+                            <span id="mm411" class="nombreAsignatura">mm-411 Ecuaciones Diferenciales</span>
+                            </b>
+                        </div>
+                        <div class="col-6">
+                            asd
+                        </div>
                     </div>
                 </div>
             </div>

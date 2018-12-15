@@ -5,8 +5,13 @@ function loginLogic(){
         dataType: "json",
         method: "POST",
         success:function(respuesta){
-            console.log(respuesta);
-            window.location.replace("main-estudiante.php")
+            if (respuesta.outcome=="success!"){
+                console.log(respuesta);
+                window.location.assign("main-estudiante.php")
+            }else{
+                console.log(respuesta);
+                $("#errorDisplay").html("Número de cuenta o contraseña incorrecta.");
+            }
         },
         error:function(error){
             console.error(error);            

@@ -29,6 +29,7 @@
             <input type="text" id="inputCuenta" class="form-control" placeholder="Número de cuenta">
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+            
             <!--
             <div class="checkbox mb-3">
                 <label>
@@ -36,6 +37,7 @@
                 </label>
             </div>
             -->
+            <h6 id="errorDisplay" style="color: red"></h6>            
             <button class="btn btn-lg btn-primary btn-block" type="button" id="signinButton">Ingresar</button>
         </form>
     </div>
