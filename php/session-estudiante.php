@@ -6,17 +6,18 @@ while(($linea=fgets($archivo))){
     if ($_POST["cuenta"] == $registro["cuenta"] && $_POST["password"] == $registro["password"]){
         
         $_SESSION["cuenta"]=$registro["cuenta"];
-        $_SESSION["nombre"]=$registro["nombre"];
+        $_SESSION["nombreEstudiante"]=$registro["nombre"];
         
         $respuesta = array();
         $respuesta["outcome"] = "success!";
         $respuesta["nombre"] = $registro["nombre"];
+        fclose($archivo);
         echo json_encode($respuesta);
         exit;
     }
-        $respuesta = array();
-        $respuesta["outcome"] = "failure!";
-        echo json_encode($registro);
-    
 }
+$respuesta = array();
+$respuesta["outcome"] = "failure!";
+fclose($archivo);
+echo json_encode($respuesta);
 ?>

@@ -13,26 +13,10 @@
 
 <body style="background-image: url(img/lucem-aspicio-tile.jpg); background-size: auto">
         <!--La topbar-->  
-        <div class="container-fluid topbar-container">
-            <div class="row topbar">
-                <div class="col-3">
-                    <div class="top-tarjeta">
-                        <b>•Cerrar sesión</b>
-                    </div>
-                </div>   
-                <div class="col-3">
-                    <div class="top-tarjeta">
-                        •Cuenta
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="top-tarjeta">
-                        •Matrícula
-                    </div>
-                </div>            
-            </div>
-        </div>
-            <!--/La topbar-->
+        <?php
+            include "topbar-estudiante.html"
+        ?>
+        <!--/La topbar-->
 
     <div class="main">
         <div class="container-fluid">
