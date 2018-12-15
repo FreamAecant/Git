@@ -130,11 +130,7 @@ function goBack(id){
     return;
 }*/
 
-$(".nombreAsignatura").click(function(){
-    console.log(this.id);
-    $(".nombreAsignatura").addClass("nombreAsignaturaGray");
-    $("#"+this.id).removeClass("nombreAsignaturaGray");
-});
+
 
 function loadAsignaturas(){
     $.ajax({
@@ -156,7 +152,7 @@ function displayDepartamentos($registroAsignaturas){
     for(var i=0;i < $registroAsignaturas.length;i++){
         $("#matriculaCont").append(`
         <div class="col-4">
-            <div class="tarjeta" id="${$registroAsignaturas[i].idDepartamento}" onclick="goBig(this.id)">
+            <div class="tarjeta-point" id="${$registroAsignaturas[i].idDepartamento}" onclick="goBig(this.id)">
                 <h5>${$registroAsignaturas[i].nombreDepartamento}</h5>
             </div>
         </div>
@@ -166,24 +162,64 @@ function displayDepartamentos($registroAsignaturas){
 }
 
 function goBig(id){
-    registro = [];
+    asignaturas = [];
     for(var i=0; i<$registroAsignaturas.length; i++){
         if ($registroAsignaturas[i].idDepartamento == id){
-            registro = $registroAsignaturas[i].asignaturas;
+            asignaturas = $registroAsignaturas[i].asignaturas;
+            break;
         }
     }
-    console.log(registro);
-    /*$("#matriculaCont").html(`
-
+    console.log(asignaturas);
+    $("#matriculaCont").html(`
+        <div class="col-12">
+            <span id="back">← seleccionar otro departamento<br></span>
+            <div class="tarjeta row">
+                <div class="col-6">
+                    <b id="control">
+                    </b>
+                </div>
+                <div class="col-6">
+                    <div id="secciones">
+                        <span class="nombreAsignaturaGray"><i>No se ha seleccionado una asignatura.</i></span>
+                    </div
+                </div>
+            </div>
+        </div>
     `)
-    for(var i=0; i<respuesta.length;i++){
-        $("#matriculaCont").append(`
-        
+    for(var i=0; i<asignaturas.length;i++){
+        $("#control").append(`
+        <span id="${asignaturas[i].codigo}" class="nombreAsignatura">${asignaturas[i].nombreAsignatura}</span><br>
         `)
     }
     $("#matriculaCont").append(`
-    
-    `)*/
+
+    `)
+    $(".nombreAsignatura").click(function(){
+        console.log(this.id);
+        $(".nombreAsignatura").addClass("nombreAsignaturaGray");
+        $("#"+this.id).removeClass("nombreAsignaturaGray");
+        $.ajax({
+            url: "php/fetchSecciones.php",
+            data: "codigo="+this.id,
+            dataType: "json",
+            method: "POST",
+            success: function(respuesta){
+                console.log(respuesta);
+                $("#secciones").html(``);
+                for (var j = 0; j<respuesta.secciones.length; j++){
+                    $("#secciones").append(`
+                        <span> seccion ${respuesta.secciones[j].codigoSeccion}, ${respuesta.secciones[j].hInicio}-${respuesta.secciones[j].hFinal} ; Prof.: ${respuesta.secciones[j].docente} </span><br>
+                    `);
+                }
+            },
+            error: function(err){
+                console.error(err);                
+            }
+        });
+    });
+    $("#back").click(function(){
+        displayDepartamentos($registroAsignaturas);
+    })
 }
 
 $(document).ready(loadAsignaturas);
