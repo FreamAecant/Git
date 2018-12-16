@@ -112,25 +112,8 @@ var dets=[
 ]
 
 var $registroAsignaturas = null;
-
-
-/*function goBig(id){
-    document.getElementById(id).innerHTML=dets[id].innerBig;
-    document.getElementById(id).setAttribute("onmouseout","goBack(this.id)");
-    document.getElementById(id).removeAttribute("onclick")
-    document.getElementById(id).setAttribute("class","tarjeta-expand");
-    document.getElementById(id).scrollTop = 90;
-    return;
-}
-function goBack(id){
-    document.getElementById(id).removeAttribute("onmouseout");
-    document.getElementById(id).setAttribute("onclick","goBig(this.id)");
-    document.getElementById(id).innerHTML=dets[id].innerSmall;
-    document.getElementById(id).setAttribute("class","tarjeta");
-    return;
-}*/
-
-
+var asignaturaActiva = null;
+var seccionActiva = null;
 
 function loadAsignaturas(){
     $("#matriculaCont").html(`<span class="nombreBlack"><i>Recuperando lista de departamentos...</i></span>`)
@@ -149,6 +132,8 @@ function loadAsignaturas(){
     })
 }
 function displayDepartamentos($registroAsignaturas){
+    asignaturaActiva = null;
+    seccionActiva = null;
     $("#matriculaCont").html(``)
     for(var i=0;i < $registroAsignaturas.length;i++){
         $("#matriculaCont").append(`
@@ -170,6 +155,8 @@ function goBig(id){
             break;
         }
     }
+    asignaturaActiva = null;
+    seccionActiva = null;
     console.log(asignaturas);
     $("#matriculaCont").html(`
         <div class="col-12">
@@ -186,20 +173,23 @@ function goBig(id){
                     </div
                 </div>
             </div>
+            <div class="divAdicionar">
+                <button type="button" id="btnAdicionar">Adicionar Asignatura</button>        <i><span id="adicionarDetalle"></span></i>
+            </div>
         </div>
     `)
+    $("#btnAdicionar").click(adicionarAsignaturaComplete);
     for(var i=0; i<asignaturas.length;i++){
         $("#control").append(`
         <span id="${asignaturas[i].codigo}" class="nombreAsignatura">${asignaturas[i].nombreAsignatura}</span><br>
         `)
     }
-    $("#matriculaCont").append(`
-
-    `)
     $(".nombreAsignatura").click(function(){
         console.log(this.id);
         $(".nombreAsignatura").addClass("nombreAsignaturaGray");
         $("#"+this.id).removeClass("nombreAsignaturaGray");
+        seccionActiva = null;
+        $("#adicionarDetalle").html("");
         $.ajax({
             url: "php/fetchSecciones.php",
             data: "codigo="+this.id,
@@ -210,18 +200,44 @@ function goBig(id){
                 $("#secciones").html(``);
                 for (var j = 0; j<respuesta.secciones.length; j++){
                     $("#secciones").append(`
-                        <span> seccion ${respuesta.secciones[j].codigoSeccion}, ${respuesta.secciones[j].hInicio}-${respuesta.secciones[j].hFinal} ; Prof.: ${respuesta.secciones[j].docente} </span><br>
+                        <span class="elementoSeccion" id="${respuesta.secciones[j].codigoSeccion}"> seccion ${respuesta.secciones[j].codigoSeccion}, ${respuesta.secciones[j].hInicio}-${respuesta.secciones[j].hFinal} ; Prof.: ${respuesta.secciones[j].docente} </span><br>
                     `);
                 }
+                asignaturaActiva = respuesta.codigo;
+                $(".elementoSeccion").click(function(){
+                    adicionarAsignatura(this.id);
+                });
             },
             error: function(err){
                 console.error(err);                
             }
         });
     });
+
     $("#back").click(function(){
         displayDepartamentos($registroAsignaturas);
     })
+}
+
+function adicionarAsignatura(codigo){
+    if (asignaturaActiva!=null){
+        console.log("asignatura: " + asignaturaActiva + ", sección: " + codigo);
+        seccionActiva = codigo;
+        $("#adicionarDetalle").html(`Código de asignatura: ${asignaturaActiva}, sección: ${seccionActiva}`);
+    }else{
+        console.error("Error al identificar la asignatura!");        
+    }
+}
+
+function adicionarAsignaturaComplete(){
+    console.log("asignaturaActiva: "+asignaturaActiva+", seccionActiva: "+seccionActiva);
+    if(asignaturaActiva != null && seccionActiva != null){
+        console.log("válido");
+        $("#adicionarDetalle").html("Enviando solicitud para adicionar asignatura...");
+    }else{
+        console.error("inválido");
+        $("#adicionarDetalle").html("Seleccione una sección para matricular.");
+    }
 }
 
 $(document).ready(loadAsignaturas);

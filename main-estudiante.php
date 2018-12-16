@@ -77,7 +77,7 @@ if (!isset($_SESSION["nombreEstudiante"])){
                         <div class="contenido">                                            
                             <div class="row tray-row">                           
                                 <div class="col-md-4">
-                                    <a href="main-estudiante.html">
+                                    <a href="main-estudiante.php">
                                         <div class="tarjeta">
                                             <h5><b>Calificación de periodo</b></h5>
                                             Ver tus calificaciones del último periodo matriculado.
@@ -85,7 +85,7 @@ if (!isset($_SESSION["nombreEstudiante"])){
                                     </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="main-estudiante.html">
+                                    <a href="main-estudiante.php">
                                         <div class="tarjeta">
                                             <h5><b>Programación académica</b></h5>
                                             Ver la planificación de secciones para el periodo en curso y averiguar cómo solicitar la apertura de una nueva sección.
@@ -93,7 +93,7 @@ if (!isset($_SESSION["nombreEstudiante"])){
                                     </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="main-estudiante.html">
+                                    <a href="main-estudiante.php">
                                         <div class="tarjeta">
                                             <h5><b>Censo de matrícula</b></h5>
                                             Ayuda a definir el calendario académico del próximo periodo diciéndonos qué planeas matricular.
@@ -103,7 +103,7 @@ if (!isset($_SESSION["nombreEstudiante"])){
                             </div>                        
                             <div class="row tray-row">
                                 <div class="col-md-4">
-                                    <a href="main-estudiante.html">
+                                    <a href="main-estudiante.php">
                                         <div class="tarjeta">
                                             <h5><b>Historial académico</b></h5>
                                             Ver tus calificaciones de pariodos anteriores.
@@ -111,7 +111,7 @@ if (!isset($_SESSION["nombreEstudiante"])){
                                     </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="main-estudiante.html">
+                                    <a href="main-estudiante.php">
                                         <div class="tarjeta">
                                             <h5><b>Solicitudes</b></h5>
                                             Realiza solicitudes particulares al equipo administrativo de la UNAH.

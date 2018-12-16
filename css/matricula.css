@@ -30,7 +30,7 @@
     background-color: rgba(0, 15, 200, 0.3);    
     color: #D4D6EE;
     margin: 5px;
-    padding: 5%;
+    padding: 30px;
     border-radius: 20px;
     border-bottom: 5px solid black;
     border-left: 5px solid black;
@@ -102,4 +102,12 @@
 .nombreBlack{
     color: black;
     text-shadow: 2px 2px white;
+}
+.elementoSeccion{
+    cursor: pointer;
+}
+.divAdicionar{
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 5px;
 }
