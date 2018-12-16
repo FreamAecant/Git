@@ -73,7 +73,7 @@ if (!isset($_SESSION["nombreEstudiante"])){
                         <h5>Idiomas</h5>
                     </div>
                 </div>-->
-            </div>
+            </div>        
 
             <hr>
             <div class="prematricula">

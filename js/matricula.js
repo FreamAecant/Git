@@ -133,6 +133,7 @@ function goBack(id){
 
 
 function loadAsignaturas(){
+    $("#matriculaCont").html(`<span class="nombreBlack"><i>Recuperando lista de departamentos...</i></span>`)
     $.ajax({
         url:"php/fetchAsignaturas.php",
         dataType:"json",
@@ -176,10 +177,11 @@ function goBig(id){
             <div class="tarjeta row">
                 <div class="col-6">
                     <b id="control">
+                    
                     </b>
                 </div>
                 <div class="col-6">
-                    <div id="secciones">
+                    <div id="secciones" class="tarjeta-expand">
                         <span class="nombreAsignaturaGray"><i>No se ha seleccionado una asignatura.</i></span>
                     </div
                 </div>
