@@ -85,11 +85,7 @@ if (!isset($_SESSION["nombreEstudiante"])){
                     PLACEHOLDER - Sección - Hora - Aula - Uv - Código<br><hr class="h303">
                     PLACEHOLDER - Sección - Hora - Aula - Uv - Código<br><hr class="h303">
                     PLACEHOLDER - Sección - Hora - Aula - Uv - Código
-                </div>
-                En lista de espera
-                <div class="lista03">
-                    PLACEHOLDER - Sección - Hora - Aula - Uv - Código
-                </div>                    
+                </div>                                  
                 Laboratorios prematriculados
                 <div class="lista03">
                     PLACEHOLDER - Sección - Hora - Aula - Uv - Código<br><hr class="h303">

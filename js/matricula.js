@@ -114,6 +114,7 @@ var dets=[
 var $registroAsignaturas = null;
 var asignaturaActiva = null;
 var seccionActiva = null;
+var departamentoActivo = null;
 
 function loadAsignaturas(){
     $("#matriculaCont").html(`<span class="nombreBlack"><i>Recuperando lista de departamentos...</i></span>`)
@@ -134,6 +135,7 @@ function loadAsignaturas(){
 function displayDepartamentos($registroAsignaturas){
     asignaturaActiva = null;
     seccionActiva = null;
+    departamentoActivo = null;
     $("#matriculaCont").html(``)
     for(var i=0;i < $registroAsignaturas.length;i++){
         $("#matriculaCont").append(`
@@ -157,7 +159,9 @@ function goBig(id){
     }
     asignaturaActiva = null;
     seccionActiva = null;
+    departamentoActivo = id;
     console.log(asignaturas);
+    console.log(departamentoActivo);
     $("#matriculaCont").html(`
         <div class="col-12">
             <span id="back">← seleccionar otro departamento<br></span>
@@ -221,19 +225,32 @@ function goBig(id){
 
 function adicionarAsignatura(codigo){
     if (asignaturaActiva!=null){
-        console.log("asignatura: " + asignaturaActiva + ", sección: " + codigo);
+        console.log("departamento: " + departamentoActivo + ", asignatura: " + asignaturaActiva + ", sección: " + codigo);
         seccionActiva = codigo;
-        $("#adicionarDetalle").html(`Código de asignatura: ${asignaturaActiva}, sección: ${seccionActiva}`);
+        $("#adicionarDetalle").html(`Departamento: ${departamentoActivo}, código de asignatura: ${asignaturaActiva}, sección: ${seccionActiva}`);
     }else{
         console.error("Error al identificar la asignatura!");        
     }
 }
 
 function adicionarAsignaturaComplete(){
-    console.log("asignaturaActiva: "+asignaturaActiva+", seccionActiva: "+seccionActiva);
+    console.log("departamentoActivo: "+departamentoActivo+", asignaturaActiva: "+asignaturaActiva+", seccionActiva: "+seccionActiva);
     if(asignaturaActiva != null && seccionActiva != null){
         console.log("válido");
         $("#adicionarDetalle").html("Enviando solicitud para adicionar asignatura...");
+        $.ajax({
+            url: "php/adicionarAsignatura.php",
+            data: "departamento="+departamentoActivo+"&asignatura="+asignaturaActiva+"&seccion="+seccionActiva,            
+            method: "post",
+            success:function(){
+                console.log("success!");
+
+            },
+            error:function(err){
+                console.error(err);            
+                console.error("failure!");    
+            }
+        });
     }else{
         console.error("inválido");
         $("#adicionarDetalle").html("Seleccione una sección para matricular.");
