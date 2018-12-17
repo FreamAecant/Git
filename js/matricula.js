@@ -132,6 +132,61 @@ function loadAsignaturas(){
         }        
     })
 }
+function loadPrematricula(){
+    $("#listaAsignaturasPrematriculadas").html("Recuperando lista de prematricula...");
+    $("#listaLaboratoriosPrematriculados").html("Recuperando lista de prematricula...");
+    $.ajax({
+        url:"php/fetchPrematricula.php",
+        dataType:"json",
+        success: function(respuesta){
+            console.log(respuesta);
+            var cont = null;
+            var arr = Array();
+            var arr2 = Array();
+            $("#listaAsignaturasPrematriculadas").html("");
+            for(var t=0;t<respuesta.prematricula.length;t++){
+                for(var y = 0;y<respuesta.secciones.length;y++){
+                    if(respuesta.prematricula[t].asignatura == respuesta.secciones[y].codigo){
+                        console.log("found");
+                        arr = respuesta.secciones[y];
+                        console.log("arr: "+arr.secciones.length);
+                        for(var x=0;x<arr.secciones.length;x++){
+                            if(arr.secciones[x].codigoSeccion == respuesta.prematricula[t].seccion){
+                                console.log("trueFound: "+arr.secciones[x].codigoSeccion+", "+respuesta.prematricula[t].seccion);
+                                arr2.push(arr.secciones[x]);
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }                
+            }
+
+            
+
+            $("#listaAsignaturasPrematriculadas").html("")
+            for(var d = 0;d<arr2.length;d++){
+                for(var g = 0; g<$registroAsignaturas.length;g++){
+                    if(respuesta.prematricula[d].departamento == $registroAsignaturas[g].idDepartamento){
+                        for(var f = 0; f<$registroAsignaturas[g].asignaturas.length;f++){
+                            if(respuesta.prematricula[d].asignatura == $registroAsignaturas[g].asignaturas[f].codigo){
+                                nombre = $registroAsignaturas[g].asignaturas[f].nombreAsignatura;
+                            }
+                        }
+                    }
+                }
+                console.log("arr2.length"+arr2.length)                
+                $("#listaAsignaturasPrematriculadas").append(`
+                ${nombre} - ${respuesta.prematricula[d].asignatura} - ${arr2[d].codigoSeccion} - HI: ${arr2[d].hInicio} - HF: ${arr2[d].hFinal}  <br><hr class="h303">
+                `);
+            }
+            //console.dir("arr2: "+arr2);
+        },
+        error: function(err){
+            console.error(err);            
+        }
+    })
+}
 function displayDepartamentos($registroAsignaturas){
     asignaturaActiva = null;
     seccionActiva = null;
@@ -148,6 +203,7 @@ function displayDepartamentos($registroAsignaturas){
     }
     $("#matriculaCont").append(``)
 }
+
 
 function goBig(id){
     asignaturas = [];
@@ -258,3 +314,4 @@ function adicionarAsignaturaComplete(){
 }
 
 $(document).ready(loadAsignaturas);
+$(document).ready(loadPrematricula);
