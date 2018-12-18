@@ -60,7 +60,7 @@ if (!isset($_SESSION["nombreEstudiante"])){
                                 <a class="menu-link" href="matricula.php">
                                     <b>•Matrícula de asignaturas</b><br>
                                 </a>
-                                <a class="menu-link" href="main-estudiante.php"><!--PLACEHOLDER-->
+                                <a class="menu-link" href="matricula-lab.php"><!--PLACEHOLDER-->
                                     <b>•Matrícula de laboratorios</b><br>
                                 </a>
                                 <a class="menu-link" href="main-estudiante.php"><!--PLACEHOLDER-->

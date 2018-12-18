@@ -8,10 +8,12 @@ $archivo2 = fopen("../data/secciones.json","r");
 while($linea2=fgets($archivo2)){
     $hand[] = json_decode($linea2,true);
 }
-$respuesta["prematricula"] = $registro;
+if(isset($registro)){
+    $respuesta["prematricula"] = $registro;
+}else{
+    $respuesta["prematricula"] = [];
+}
 $respuesta["secciones"] = $hand;
-
-
 
 fclose($archivo2);
 fclose($archivo);

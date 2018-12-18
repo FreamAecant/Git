@@ -144,6 +144,9 @@ function loadPrematricula(){
             var arr = Array();
             var arr2 = Array();
             $("#listaAsignaturasPrematriculadas").html("");
+            if(respuesta.prematricula.length == 0){
+                $("#listaAsignaturasPrematriculadas").html("No se ha prematriculado ninguna asignatura.")
+            }
             for(var t=0;t<respuesta.prematricula.length;t++){
                 for(var y = 0;y<respuesta.secciones.length;y++){
                     if(respuesta.prematricula[t].asignatura == respuesta.secciones[y].codigo){
@@ -163,8 +166,6 @@ function loadPrematricula(){
             }
 
             
-
-            $("#listaAsignaturasPrematriculadas").html("")
             for(var d = 0;d<arr2.length;d++){
                 for(var g = 0; g<$registroAsignaturas.length;g++){
                     if(respuesta.prematricula[d].departamento == $registroAsignaturas[g].idDepartamento){
@@ -300,11 +301,13 @@ function adicionarAsignaturaComplete(){
             method: "post",
             success:function(){
                 console.log("success!");
-
+                $("#adicionarDetalle").html("Asignatura adicionada a prematrícula!");
+                loadPrematricula();
             },
             error:function(err){
                 console.error(err);            
-                console.error("failure!");    
+                console.error("failure!");  
+                $("#adicionarDetalle").html("Ocurrió un error al adicionar la asignatura...");  
             }
         });
     }else{
