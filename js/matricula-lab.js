@@ -147,26 +147,6 @@ function checkPrematricula(codigoLab){
             var arr2 = Array();
             //$("#listaAsignaturasPrematriculadas").html("");
             var found = false;
-            for(var z = 0; z<$registroAsignaturas.length;z++){
-                console.log("revisando registros: "+$registroAsignaturas[z]);
-                console.log("codigoLab: "+ codigoLab)
-                if (departamentoActivo == $registroAsignaturas[z].idDepartamento){
-                    console.log("registroe encontrado en idDepartamento: "+$registroAsignaturas[z].idDepartamento);
-                    for(var n = 0; n<$registroAsignaturas[z].labs.length; n++){
-                        console.log("   revisando registro labs de "+$registroAsignaturas[z].labs[n].codigo);
-                        if($registroAsignaturas[z].labs[n].codigo == codigoLab){
-                            console.log("encontrado en codigo "+$registroAsignaturas[z].labs[n].codigo+" en indice "+n);
-                            temparr = $registroAsignaturas[z].labs[n];
-                            break;
-                        }
-                    }
-                    break;
-                }
-            }
-            console.log("temparr: "+temparr.codigo+", "+temparr.nombreLab);
-            temparr["test"] = 5;
-            console.log("test: "+temparr["test"])
-
             if(respuesta.prematricula.length == 0){
                 found = false;
                 //$("#listaAsignaturasPrematriculadas").html("No se ha prematriculado ninguna asignatura.")
@@ -180,34 +160,63 @@ function checkPrematricula(codigoLab){
                     
                 }
             }
-            console.log("found: "+found);
+            console.log("found: "+found);            
 
-            if(found){
-                
-                
-
-                /*$("#adicionarDetalle").html("Enviando solicitud para adicionar asignatura...");
-                $.ajax({
-                    url: "php/adicionarLab.php",
-                    data: "departamento="+departamentoActivo+"&asignatura="+asignaturaActiva+"&seccion="+seccionActiva,            
-                    method: "post",
-                    success:function(){
-                        console.log("success!");
-                        $("#adicionarDetalle").html("Laboratorio adicionado a prematrícula!");
-                        
-                    },
-                    error:function(err){
-                        console.error(err);            
-                        console.error("failure!");  
-                        $("#adicionarDetalle").html("Ocurrió un error al adicionar el laboratorio...");  
+            for(var z = 0; z<$registroAsignaturas.length;z++){
+                //console.log("revisando registros: "+$registroAsignaturas[z]);
+                //console.log("codigoLab: "+ codigoLab)
+                if (departamentoActivo == $registroAsignaturas[z].idDepartamento){
+                    //console.log("registro encontrado en idDepartamento: "+$registroAsignaturas[z].idDepartamento);
+                    for(var n = 0; n<$registroAsignaturas[z].labs.length; n++){
+                        //console.log("   revisando registro labs de "+$registroAsignaturas[z].labs[n].codigo);
+                        if($registroAsignaturas[z].labs[n].codigo == codigoLab){
+                            //console.log("encontrado en codigo "+$registroAsignaturas[z].labs[n].codigo+" en indice "+n);
+                            temparr = $registroAsignaturas[z].labs[n];
+                            break;
+                        }
                     }
-                });*/
+                    break;
+                }
             }
+            console.log("temparr: "+temparr.codigo+", "+temparr.nombreLab);
+            
+            $.ajax({
+                url: "php/fetchDetalleLab.php",
+                dataType: "json",
+                data: "codigo="+codigoLab+"&seccion="+seccionActiva,
+                method: "POST",
+                success:function(respuesta){
+                    console.log(respuesta);
+                    temparr["seccion"]=respuesta.codigoSeccion;
+                    temparr["instr"]=respuesta.instructor;
+                    temparr["hora"]=respuesta.hInicio + " - " + respuesta.hFinal;
+                    console.log("temparr 2 : "+temparr.codigo+", "+temparr.nombreLab+", "+temparr.seccion+", "+temparr.instr+", "+temparr.hora);
+                    if(found){
+                        guardarLaboratorio();
+                    }
+                },
+                error:function(err){
+                    console.error("segundo, "+err);                    
+                }
+            });            
         },
         error: function(err){
-            console.error(err);            
+            console.error("primero "+err);            
         }
-    })
+    });
 }
 
-$(document).ready(loadAsignaturas);
+function guardarLaboratorio(){
+    $.ajax({
+        url: "php/guardarLaboratorio.php",
+        data: "codigo="+temparr.codigo+"&nombre="+temparr.nombreLab+"&seccion="+temparr.seccion+"&hora="+temparr.hora,
+        success:function(){
+            console.log("success!");
+        },
+        error:function(err){
+            console.error("failure!"+err);            
+        }
+    });
+}
+
+$(document).ready(loadAsignaturas); //temparr: codigo nombreLab seccion instr hora
