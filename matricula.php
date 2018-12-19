@@ -81,15 +81,11 @@ if (!isset($_SESSION["nombreEstudiante"])){
             <div class="prematricula">
                 Asignaturas prematriculadas
                 <div class="lista03" id="listaAsignaturasPrematriculadas">
-                    PLACEHOLDER - Sección - Hora - Aula - Uv - Código<br><hr class="h303">
-                    PLACEHOLDER - Sección - Hora - Aula - Uv - Código<br><hr class="h303">
-                    PLACEHOLDER - Sección - Hora - Aula - Uv - Código<br><hr class="h303">
-                    PLACEHOLDER - Sección - Hora - Aula - Uv - Código
+
                 </div>                                  
                 Laboratorios prematriculados
                 <div class="lista03" id="listaLaboratoriosPrematriculados">
-                    PLACEHOLDER - Sección - Hora - Aula - Uv - Código<br><hr class="h303">
-                    PLACEHOLDER - Sección - Hora - Aula - Uv - Código
+
                 </div>
             </div>
         </div>

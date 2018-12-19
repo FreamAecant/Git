@@ -191,9 +191,9 @@ function checkPrematricula(codigoLab){
                     temparr["instr"]=respuesta.instructor;
                     temparr["hora"]=respuesta.hInicio + " - " + respuesta.hFinal;
                     console.log("temparr 2 : "+temparr.codigo+", "+temparr.nombreLab+", "+temparr.seccion+", "+temparr.instr+", "+temparr.hora);
-                    if(found){
-                        guardarLaboratorio();
-                    }
+                    
+                    guardarLaboratorio();
+                    
                 },
                 error:function(err){
                     console.error("segundo, "+err);                    
@@ -210,8 +210,12 @@ function guardarLaboratorio(){
     $.ajax({
         url: "php/guardarLaboratorio.php",
         data: "codigo="+temparr.codigo+"&nombre="+temparr.nombreLab+"&seccion="+temparr.seccion+"&hora="+temparr.hora,
+        method: "POST",
         success:function(){
             console.log("success!");
+            $("#adicionarDetalle").html("<b>Laboratorio Adicionado con éxito!</b>");
+            seccionActiva = null;
+            
         },
         error:function(err){
             console.error("failure!"+err);            
